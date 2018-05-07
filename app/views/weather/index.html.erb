@@ -1,0 +1,76 @@
+<div class="ui grid">
+	<div class ="one wide row">
+	</div>
+	<div class="ui center aligned container">
+		<h2 class="ui center aligned icon header">
+		  <i class="circular cloud icon"></i>
+		  <div class="content">
+		  Quezon City, Philippines
+			  <div class="ui sub header">
+			  <%= render html: "(#{@coordinates['lon']}, #{@coordinates['lat']})".html_safe %>
+			  <div>
+		  </div>
+		</h2>
+	</div>
+	<div class ="one wide row">
+	</div>
+	<div class = "four wide row">
+	<div class="four wide column">
+	</div>
+	<div class="five wide column">
+		<div class="ui stackable container segment">
+			<h2 class="ui center aligned icon header">
+			  <i class="thermometer three quarters icon"></i>
+			  <div class="content">
+			  <%= render html: "#{@main['temp']}°C".html_safe %>
+			  </div>
+			  	<div class="ui sub header">
+				  <%= render html: "min: #{@main['temp_min']}°C, max: #{@main['temp_max']}°C".html_safe %>
+				</div>
+			</h2>
+			<div class="ui divider"></div>
+			<h2 class="ui center aligned header">
+			  <div class="content">
+			  <%= render html: "#{@weather['main']}".html_safe %>
+				  <div class="ui sub header">
+				  <%= render html: "#{@weather['description']}".html_safe %>
+				  </div>
+			  </div>
+			</h2>
+			<div class="content"><%= render html: "Pressure: #{@main['pressure']} Pa".html_safe %></div>
+			<div class="content"><%= render html: "Humidity: #{@main['humidity']} g/m^3".html_safe %></div>
+			<div class="content"><%= render html: "Wind speed: #{@wind['speed']} kph".html_safe %></div>
+		</div>
+	</div>
+	<div class="three wide column">
+		<div class="ui container segment">
+			<h2 class="ui center aligned icon header">
+			  <i class="sun icon"></i>
+			  <div class="content">
+			  Sunrise
+				  <div class="ui sub header">
+				  <%= render html: "#{@sys['sunrise']}".html_safe %>
+				  </div>
+			  </div>
+			</h2>
+			<h2 class="ui center aligned icon header">
+			  <i class="moon icon"></i>
+			  <div class="content">
+			  Sunset
+				  <div class="ui sub header">
+				  <%= render html: "#{@sys['sunset']}".html_safe %>
+				  </div>
+			  </div>
+			</h2>
+		</div>
+	</div>
+	<div class="four wide column">
+	</div>
+	</div>
+	<div class ="one wide row">
+	</div>
+</div>
+
+<script>
+	setTimeout("location.reload();",899999);
+</script>
